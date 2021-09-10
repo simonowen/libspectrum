@@ -16,11 +16,11 @@ if (CMAKE_TOOLCHAIN_FILE)
   include(${CMAKE_TOOLCHAIN_FILE})
 endif()
 
-set(SOURCES buffer.c bzip2.c creator.c crypto.c csw.c dck.c ide.c libspectrum.c
-    memory.c microdrive.c mmc.c plusd.c pzx_read.c rzx.c sna.c snapshot.c snp.c
-    sp.c symbol_table.c szx.c tap.c tape.c tape_block.c timings.c tzx_read.c
-    tzx_write.c utilities.c warajevo_read.c wav.c z80.c z80em.c zip.c zlib.c
-    zxs.c snap_accessors.c tape_accessors.c tape_set.c
+set(SOURCES buffer.c bzip2.c creator.c csw.c dck.c ide.c libspectrum.c memory.c
+    microdrive.c mmc.c plusd.c pzx_read.c rzx.c sna.c snapshot.c snp.c sp.c
+    symbol_table.c szx.c tap.c tape.c tape_block.c timings.c tzx_read.c
+    tzx_write.c utilities.c warajevo_read.c z80.c z80em.c zip.c zlib.c zxs.c
+    snap_accessors.c tape_accessors.c tape_set.c
     myglib/garray.c myglib/ghash.c myglib/gslist.c)
 set(HEADERS libspectrum.h internals.h tape_block.h zip.h)
 
