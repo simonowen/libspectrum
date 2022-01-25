@@ -105,6 +105,13 @@ typedef unsigned int guint;
 typedef unsigned long gulong;
 typedef const void * gconstpointer;
 typedef void * gpointer;
+#if UINTPTR_MAX < (1UL << 32)
+typedef long gintptr;
+typedef unsigned long guintptr;
+#else
+typedef long long gintptr;
+typedef unsigned long long guintptr;
+#endif
 
 typedef struct _GSList GSList;
 
@@ -263,8 +270,8 @@ LIBSPECTRUM_API GArray* g_array_remove_index_fast( GArray *array, guint index );
 LIBSPECTRUM_API gchar* g_array_free( GArray *array, gboolean free_segment );
 
 #define GINT_TO_POINTER(i)      ((gpointer)  (glong)(i))
-#define GPOINTER_TO_INT(p)      ((gint)   (glong)(p))
-#define GPOINTER_TO_UINT(p)     ((guint)  (gulong)(p))
+#define GPOINTER_TO_INT(p)      ((gint)   (gintptr)(p))
+#define GPOINTER_TO_UINT(p)     ((guint)  (guintptr)(p))
 
 /*
  * General libspectrum routines
